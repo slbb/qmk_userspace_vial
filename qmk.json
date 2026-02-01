@@ -1,4 +1,8 @@
 {
-    "userspace_version": "1.0",
-    "build_targets": []
+    "userspace_version": "1.1",
+    "build_targets": [
+        ["mt/split75", "slbb"]
+        ["mt/split75", "vial"]
+        ["x10s", "vial"]
+    ]
 }
