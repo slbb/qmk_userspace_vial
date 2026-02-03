@@ -13,7 +13,7 @@ jobs:
       # qmk_repo: qmk/qmk_firmware
       # qmk_ref: master
       qmk_repo: vial-kb/vial-qmk
-      qmk_ref: vial
+      qmk_ref: merge-2025-12-28
       preparation_command: "cp -rf unsubmitted_keyboards/* qmk_firmware/keyboards/"
 
   publish:
