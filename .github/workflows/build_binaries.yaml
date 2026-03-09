@@ -14,6 +14,7 @@ jobs:
       # qmk_ref: master
       qmk_repo: vial-kb/vial-qmk
       qmk_ref: merge-2025-12-28
+      preparation_command: "cp -rf keyboards-local/* qmk_firmware/keyboards/"
 
   publish:
     name: 'QMK Userspace Publish'
