@@ -34,11 +34,14 @@ __attribute__ ((weak)) void leader_start_keymap(void) {}
 
 __attribute__ ((weak)) void leader_end_keymap(void) {}
 
+__attribute__ ((weak)) bool leader_add_keymap(uint16_t keycode) {return false;}
+
 void leader_start_user(void) {
 	leader_start_keymap();
 }
 
-void leader_end_user(void) {
+/* sequences that run immediatly */
+bool leader_add_user(uint16_t keycode) {
 	if (leader_sequence_one_key(KC_E)) {
 		tap_code(KC_MYCM);
 	} else if (leader_sequence_one_key(KC_C)) {
@@ -53,7 +56,14 @@ void leader_end_user(void) {
 		tap_code16(LCG(KC_D));
 	} else if (leader_sequence_two_keys(KC_D, KC_C)) {
 		tap_code16(LCG(KC_F4));
+	} else {
+		return false;
 	}
+	return leader_add_keymap();
+}
+
+/* sequences that run on timeout */
+void leader_end_user(void) {
 	leader_end_keymap();
 }
 
