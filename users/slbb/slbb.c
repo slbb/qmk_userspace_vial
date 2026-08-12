@@ -20,6 +20,14 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 	return layer_state_set_keymap(state);
 }
 
+__attribute__ ((weak)) void oneshot_mods_changed_keymap(uint8_t mods) {}
+
+void oneshot_mods_changed_user(uint8_t mods) {
+	clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
+	oneshot_mods_changed_keymap(mods);
+}
+
+
 #ifdef LEADER_ENABLE
 
 __attribute__ ((weak)) void leader_start_keymap(void) {}

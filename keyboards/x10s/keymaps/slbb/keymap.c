@@ -7,10 +7,6 @@
 #define TFW_TAB C(KC_TAB)   // Tab Forword
 #define TBW_TAB LCS(KC_TAB) // Tab Backword
 
-void oneshot_mods_changed_user(uint8_t mods) {
-	clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
-}
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[0] = LAYOUT( // Basic
 			KC_ESC  , KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    ,/**/KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , KC_BSPC ,
@@ -22,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 			_______ , _______ , _______ , _______ , _______ , _______ ,/**/_______ , _______ , _______ , _______ , _______ , _______ ,
 			_______ , _______ , _______ , _______ , _______ , _______ ,/**/_______ , _______ , _______ , _______ , _______ , _______ ,
 			_______ , _______ , _______ , _______ , _______ , _______ ,/**/_______ , _______ , _______ , _______ , _______ , _______ ,
-			KC_LCTL , KC_CAPS , KC_LCTL , KC_LALT ,KC_SPC,LT(2,KC_SPC),/**/_______ , _______ , _______ , _______ , _______ , _______ ),
+			KC_LCTL , KC_CAPS , KC_RCTL , KC_LALT ,KC_SPC,LT(2,KC_SPC),/**/_______ , _______ , _______ , _______ , _______ , _______ ),
 
 	[2] = LAYOUT( // Game extra
 			KC_GRV  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5    ,/**/KC_P7   , KC_P8   , KC_P9   , XXXXXXX , XXXXXXX , TO(0)   ,
@@ -32,14 +28,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[3] = LAYOUT( // fn
 			TO(1)   , A(KC_F4), ABW_TAB , AFW_TAB , TBW_TAB , TFW_TAB ,/**/KC_VOLU , KC_F9   , KC_F10  , KC_F11  , KC_F12  , KC_BRIU ,
-			KC_INS  , OS_LALT , OS_LSFT , KC_DEL  , OS_LCTL , OS_LGUI ,/**/KC_VOLD , KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_BRID ,
-			KC_SYRQ , A(KC_TAB),XXXXXXX , KC_CALC , KC_WREF , KC_WHOM ,/**/KC_MUTE , KC_F5   , KC_F6   , KC_F7   , KC_F8   , KC_CPNL ,
+			A(KC_TAB),OS_LALT , OS_LSFT , KC_DEL  , OS_LCTL , OS_LGUI ,/**/KC_VOLD , KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_BRID ,
+			TO(5)   , KC_INS  , XXXXXXX , KC_CALC , KC_WREF , KC_WHOM ,/**/KC_MUTE , KC_F5   , KC_F6   , KC_F7   , KC_F8   , C(KC_BSLS),
 			KC_PSCR , KC_SCRL , KC_PAUS , KC_MYCM , _______ , XXXXXXX ,/**/KC_APP  , KC_CAPS , KC_HOME , KC_PGDN , KC_PGUP , KC_END  ),
 
 	[4] = LAYOUT( // Punctuation
 			KC_GRV  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5    ,/**/KC_6    , KC_7    , KC_8    , KC_9    , KC_0    , LM(5,MOD_LALT),
 			KC_TILD , KC_ASTR , KC_LCBR , KC_LPRN , KC_MINS , KC_LBRC ,/**/KC_RBRC , KC_EQL  , KC_RPRN , KC_RCBR , KC_PLUS , KC_PIPE ,
-			XXXXXXX , KC_EXLM , KC_AT   , KC_HASH , KC_DLR  , KC_PERC ,/**/KC_CIRC , KC_AMPR , XXXXXXX , XXXXXXX , KC_BSLS , XXXXXXX ,
+			KC_RALT , KC_EXLM , KC_AT   , KC_HASH , KC_DLR  , KC_PERC ,/**/KC_CIRC , KC_AMPR , XXXXXXX , XXXXXXX , KC_BSLS , KC_RALT ,
 			UG_VALD , UG_VALU , UG_TOGG , UG_HUEU , KC_UNDS , UG_NEXT ,/**/OS_TOGG , _______ , KC_APP  , KC_RALT , KC_RGUI , KC_RCTL ),
 
 	[5] = LAYOUT( // Keypad
