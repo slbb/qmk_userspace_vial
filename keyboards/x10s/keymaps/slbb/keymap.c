@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[4] = LAYOUT( // Punctuation
 			KC_GRV  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5    ,/**/KC_6    , KC_7    , KC_8    , KC_9    , KC_0    , LM(5,MOD_LALT),
 			KC_TILD , KC_ASTR , KC_LCBR , KC_LPRN , KC_MINS , KC_LBRC ,/**/KC_RBRC , KC_EQL  , KC_RPRN , KC_RCBR , KC_PLUS , KC_PIPE ,
-			KC_RALT , KC_EXLM , KC_AT   , KC_HASH , KC_DLR  , KC_PERC ,/**/KC_CIRC , KC_AMPR , XXXXXXX , XXXXXXX , KC_BSLS , KC_RALT ,
+			OS_RALT , KC_EXLM , KC_AT   , KC_HASH , KC_DLR  , KC_PERC ,/**/KC_CIRC , KC_AMPR , XXXXXXX , XXXXXXX , KC_BSLS , OS_RALT ,
 			UG_VALD , UG_VALU , UG_TOGG , UG_HUEU , KC_UNDS , UG_NEXT ,/**/OS_TOGG , _______ , KC_APP  , KC_RALT , KC_RGUI , KC_RCTL ),
 
 	[5] = LAYOUT( // Keypad
